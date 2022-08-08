@@ -101,6 +101,7 @@ namespace Platformer.Mechanics
                     jumpState = JumpState.Jumping;
                     jump = true;
                     stopJump = false;
+                   
                     break;
                 case JumpState.Jumping:
                     if (!IsGrounded)
@@ -131,11 +132,13 @@ namespace Platformer.Mechanics
             {
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;
                 jump = false;
+                animator.SetBool("IsJumping", true);
                
             }
             else if (stopJump)
             {
                 stopJump = false;
+                animator.SetBool("IsJumping", false);
                 if (velocity.y > 0)
                 {
                     velocity.y = velocity.y * model.jumpDeceleration;
