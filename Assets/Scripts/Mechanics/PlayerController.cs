@@ -58,11 +58,11 @@ namespace Platformer.Mechanics
                 move.x = Input.GetAxis("Horizontal");
                 if(move.x <0)
                 {
-                    SpiriteTransform.localScale = new Vector3(4, 4, 1);
+                    transform.localScale = new Vector3(1, 1, 1);
                 }
                 else if(move.x > 0)
                 {
-                    SpiriteTransform.localScale = new Vector3(-4, 4, 1);
+                    transform.localScale = new Vector3(-1, 1, 1);
 
                 }
                 if(move.x != 0)
@@ -72,6 +72,7 @@ namespace Platformer.Mechanics
                 else
                 {
                     animator.SetBool("IsWalking", false);
+                    
                 }
                 
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
@@ -80,6 +81,7 @@ namespace Platformer.Mechanics
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
+                    
                 }
             }
             else
@@ -116,8 +118,11 @@ namespace Platformer.Mechanics
                     break;
                 case JumpState.Landed:
                     jumpState = JumpState.Grounded;
+                    
                     break;
             }
+            
+                    
         }
 
         protected override void ComputeVelocity()
@@ -126,6 +131,7 @@ namespace Platformer.Mechanics
             {
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;
                 jump = false;
+               
             }
             else if (stopJump)
             {
@@ -133,6 +139,7 @@ namespace Platformer.Mechanics
                 if (velocity.y > 0)
                 {
                     velocity.y = velocity.y * model.jumpDeceleration;
+                   
                 }
             }
 
