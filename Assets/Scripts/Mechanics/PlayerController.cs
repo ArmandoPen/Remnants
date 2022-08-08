@@ -17,7 +17,7 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
-
+        public Transform SpiriteTransform;
         /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
@@ -56,6 +56,24 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
+                if(move.x <0)
+                {
+                    SpiriteTransform.localScale = new Vector3(4, 4, 1);
+                }
+                else if(move.x > 0)
+                {
+                    SpiriteTransform.localScale = new Vector3(-4, 4, 1);
+
+                }
+                if(move.x != 0)
+                {
+                    animator.SetBool("IsWalking", true);
+                }
+                else
+                {
+                    animator.SetBool("IsWalking", false);
+                }
+                
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
                 else if (Input.GetButtonUp("Jump"))
@@ -66,7 +84,7 @@ namespace Platformer.Mechanics
             }
             else
             {
-                move.x = 0;
+                move.x = 0; 
             }
             UpdateJumpState();
             base.Update();
