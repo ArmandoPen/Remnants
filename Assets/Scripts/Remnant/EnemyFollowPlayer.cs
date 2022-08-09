@@ -7,8 +7,6 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float speed;
     public float lineOfSite;
     public float shootingRange;
-    public float fireRate = 1f;
-    private float nextFireTime;
     public GameObject bullet;
     public GameObject bulletParent;
     private Transform player;
@@ -26,10 +24,9 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
+        else if (distanceFromPlayer <= shootingRange)
         {
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-            nextFireTime = Time.time + fireRate;
         }
     }
     private void OnDrawGizmosSelected()
