@@ -12,6 +12,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletParent;
     private Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            
         }
         else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
         {
