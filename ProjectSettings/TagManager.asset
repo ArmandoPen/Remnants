@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TutorialRequirement
   - Bee
+  - Spider
   layers:
   - Default
   - TransparentFX
