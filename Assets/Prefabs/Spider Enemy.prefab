@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  lineOfSite: 40
+  lineOfSite: 10
   shootingRange: 5
   fireRate: 5
   Poison: {fileID: 8648649522045974108, guid: f4da50a28f6042e45a18a587e15d2820, type: 3}
