@@ -8,6 +8,7 @@ TagManager:
   - Bee
   - Spider
   - Fire
+  - Death
   layers:
   - Default
   - TransparentFX

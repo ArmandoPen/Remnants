@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Remnants/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Remnants/Scenes/Settings.unity
     guid: 6a3e2e98d2cfd8e4eb01ccb619600378
+  - enabled: 1
+    path: Assets/Remnants/Scenes/Title.unity
+    guid: a04902388211ccb4993dec2190eb1921
   - enabled: 1
     path: Assets/Remnants/Scenes/Level.unity
     guid: 528016b7e1c4edc4db2fb36fba6453c4
   - enabled: 1
-    path: Assets/Remnants/Scenes/Title.unity
-    guid: a04902388211ccb4993dec2190eb1921
+    path: Assets/Remnants/Scenes/Credits.unity
+    guid: d75475d9c9636ca43891ce71303973f0
   m_configObjects: {}

@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lineOfSite: 7
+  lineOfSite: 12
   shootingRange: 6
   fireRate: 3
   bullet: {fileID: 4504338744785099738, guid: 50134238e27764c40ba45229638049aa, type: 3}
